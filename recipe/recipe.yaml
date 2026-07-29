@@ -33,6 +33,17 @@ tests:
       python_version:
         - ${{ python_min }}.*
         - "*"
+  - script:
+      - python -m pytest -vv --asyncio-mode=auto
+    files:
+      source:
+        - tests/
+    requirements:
+      run:
+        - python ${{ python_min }}.*
+        - pytest
+        - pytest-asyncio
+        - uvloop
 
 about:
   license: MIT
