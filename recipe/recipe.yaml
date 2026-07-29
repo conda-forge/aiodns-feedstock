@@ -43,7 +43,8 @@ tests:
         - python ${{ python_min }}.*
         - pytest
         - pytest-asyncio
-        - uvloop
+        - if: unix
+          then: uvloop
 
 about:
   license: MIT
